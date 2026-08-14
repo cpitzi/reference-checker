@@ -17,7 +17,7 @@ editorial judgment acts on; the aggregate score is a summary of tiers, not
 the other way around.
 
 Heuristic 10 (journal legitimacy / predatory-venue flagging, shipped in v6
-via PR [#44](../../pull/44), 2026-06-19) made a second, related requirement
+via PR [#44](https://github.com/lentago/reference-checker/pull/44), 2026-06-19) made a second, related requirement
 explicit: classification language must be factual and non-accusatory.
 `roadmap/v4-features.md` records the resulting rule directly — *"'Predatory'
 is not used as a determination; 'potentially predatory' or 'unverified
@@ -44,14 +44,16 @@ most "potentially predatory" or "unverified venue."
   repo history — the tiered classification is present from the earliest
   captured prompt (v3) onward, so no "before" state exists to contrast
   against in-repo.
-- For H10 specifically, the recorded alternative was flagging any journal
-  absent from the primary indexes (DOAJ, PubMed/MEDLINE, Scopus, Web of
-  Science) as an outright verdict. Rejected in favor of the hybrid
-  whitelist-plus-community-list design actually shipped, which treats
-  absence from primary indexes plus corroboration from secondary,
-  non-authoritative lists (Beall's archived list, Stop Predatory Journals)
-  as sufficient only for the softer "Elevated"/"unverified venue" framing,
-  never a standalone accusation.
+- For H10 specifically, no separately weighed alternative is recorded; the
+  contrast is implicit in the shipped design's own recorded constraints
+  (issue #7, `roadmap/v4-features.md`). The hybrid
+  whitelist-plus-community-list design treats absence from the primary
+  indexes (DOAJ, PubMed/MEDLINE, Scopus, Web of Science) plus corroboration
+  from secondary, non-authoritative lists (Beall's archived list, Stop
+  Predatory Journals) as sufficient only for the softer
+  "Elevated"/"unverified venue" framing, never a standalone accusation —
+  the never-sole-basis constraint is the recorded fact; the rejected pole
+  (index absence as an outright verdict) is drawn here retrospectively.
 
 **Retrospective — not considered at the time:**
 - **A continuous 0–100 (or 0–1) per-reference confidence score** instead of
@@ -62,7 +64,7 @@ most "potentially predatory" or "unverified venue."
   matches against Crossref/PubMed/publisher metadata) can't actually back
   up, and it's easier to game or dispute at the margins than a discrete
   tier with a stated rationale. It would also have made the exact defect
-  issue [#43](../../issues/43) found — the aggregate formula structurally
+  issue [#43](https://github.com/lentago/reference-checker/issues/43) found — the aggregate formula structurally
   punishing clean articles — harder to spot, since a continuous score
   smooths over the same distortion a coarse tier table exposes plainly.
 - **A binary flagged/not-flagged classification** (no gradation at all).

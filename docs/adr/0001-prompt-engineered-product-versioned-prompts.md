@@ -10,19 +10,19 @@ the NLM Catalog to verify citations. There is no compile step, test runner,
 or package manager — as [CLAUDE.md](../../CLAUDE.md) puts it, "the 'build
 system' is 'paste the prompt into Claude with a reference list.'"
 
-At project scaffold (PR [#1](../../pull/1), 2026-03-23) the live prompt was
+At project scaffold (PR [#1](https://github.com/lentago/reference-checker/pull/1), 2026-03-23) the live prompt was
 moved into `prompts/v3-auditor.md`, establishing the convention that ships to
 this day: each revision lands as the next-integer file
 (`prompts/v<N>-auditor.md`), never an in-place edit, so old versions stay
 readable for diffing and for reproducing past audit runs. Four versions have
 shipped under this convention since: v3 (scaffold), v4 (2026-05-21), v5
-(PR [#39](../../pull/39), 2026-06-19), and v6 (PR [#44](../../pull/44),
+(PR [#39](https://github.com/lentago/reference-checker/pull/39), 2026-06-19), and v6 (PR [#44](https://github.com/lentago/reference-checker/pull/44),
 2026-06-19).
 
 The same scaffold commit added [`docs/architecture.md`](../architecture.md),
 a design document for decomposing the monolithic Opus prompt into a
 four-stage Haiku/Sonnet/Opus/Haiku pipeline for editorial-scale throughput,
-and issue [#11](../../issues/11) to track implementing it. Both the design
+and issue [#11](https://github.com/lentago/reference-checker/issues/11) to track implementing it. Both the design
 doc and the issue are still open as of this writing — the pipeline is
 deliberately designed but not built. `docs/architecture.md` estimates the
 decomposed pipeline only becomes cost-effective above roughly 3 manuscripts/

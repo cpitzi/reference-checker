@@ -10,25 +10,25 @@ every entry. On its own, that set can't catch a prompt revision that gets
 more aggressive and starts over-flagging *clean* references — a change that
 looks like an improvement (more flags!) but is actually just noise.
 
-Issue [#3](../../issues/3) (opened 2026-03-23, same day as scaffold) tracked
-closing that gap; PR [#42](../../pull/42) (merged 2026-06-19) delivered it by
+Issue [#3](https://github.com/lentago/reference-checker/issues/3) (opened 2026-03-23, same day as scaffold) tracked
+closing that gap; PR [#42](https://github.com/lentago/reference-checker/pull/42) (merged 2026-06-19) delivered it by
 adding `test-sets/real-articles/` — full reference lists pulled from two
 real, published articles (Ahmadinezhad 2024 and Patriksson 2024), with every
 citation individually verified against Crossref before being committed. This
 set exercises specificity: it should produce near-zero flags on legitimate
 scholarship.
 
-Running the v5 prompt against the new paired sets (PR [#41](../../pull/41),
+Running the v5 prompt against the new paired sets (PR [#41](https://github.com/lentago/reference-checker/pull/41),
 2026-06-19, and the PR #42 real-article run) surfaced a real problem the
 detection-only set could never have shown: issue
-[#43](../../issues/43) found that the scoring formula's `D × 3` base cost
+[#43](https://github.com/lentago/reference-checker/issues/43) found that the scoring formula's `D × 3` base cost
 (a per-Defensible-reference deduction) made a *clean* 30-reference article
 score only 10, and the clean 26-reference Patriksson article score 22 — both
 reading as alarming for articles with no integrity problems. The v6 revision
-(PR [#44](../../pull/44)) removed the `D × 3` term; the corrected formula
+(PR [#44](https://github.com/lentago/reference-checker/pull/44)) removed the `D × 3` term; the corrected formula
 scored the same clean Patriksson article at 96
 (`reports/patriksson-2024-v6-2026-06-19.html`), confirmed by the v6 baseline
-run (PR [#46](../../pull/46), 2026-06-20).
+run (PR [#46](https://github.com/lentago/reference-checker/pull/46), 2026-06-20).
 
 CLAUDE.md states the operating principle this issue established directly: "a
 prompt revision that improves one [set] without regressing the other is a
