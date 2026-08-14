@@ -221,6 +221,8 @@ This is the same pattern as writing configuration management (Puppet, Ansible) f
 
 Nothing gets added to the spec until it's been tested. The prompt is the artifact.
 
+**Architecture decisions:** [`docs/adr/`](docs/adr/) records the reconstructed rationale behind this repo's key structural choices — prompt-as-product, paired evaluation gates, and the risk-classification scheme.
+
 ## Repository Structure
 
 ```
